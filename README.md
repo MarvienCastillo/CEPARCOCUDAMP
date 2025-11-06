@@ -1,6 +1,6 @@
 ## Group Members
 - Castillo, Marvien Angel C.
-- Herrera, Mikhaela Gabrielle B.
+- Herrera, Mikaela Gabrielle B.
 - Regindin, Sean Adrien I.
 ## Project Specification
 - This project explores the performance and correctness of various CUDA implementations based on our SIMD specification. We compare multiple CUDA variants against a baseline C/C++ implementation, analyzing execution time, correctness, and architectural behavior.
@@ -60,14 +60,19 @@ idx[i] = 0 if A[i] >= B[i], else 1
 <img width="1280" height="679" alt="image" src="https://github.com/user-attachments/assets/7eb6171f-37e8-4c18-95c3-24d5ec43d4b5" />
 
 ### VARIANT 3: CUDA Prefetch
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/aff5513a-c475-4789-9c5b-d78f8c17510d" />
 
 ### VARIANT 4: CUDA Prefetch + page creation
+<img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/8d351b61-d01a-4909-a03a-c36ceb9cee70" />
 
 ### VARIANT 5: CUDA Prefetch + Page creation + memadvise
+<img width="1919" height="1017" alt="image" src="https://github.com/user-attachments/assets/298ac6a3-4585-4e11-a01a-bdd67ffdf897" />
 
 ### VARIANT 6: CUDA classic MEMCPY
+<img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/8d42ab5d-452c-4c2f-b203-5ebec6af9212" />
 
 ### VARIANT 7: CUDA data init in a CUDA kernel
+<img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/533c33f8-c15a-445b-9db0-54423c0c720e" />
 
 ## iii.) Comparative table of execution time
 #### Baseline C execution time: 4648.745000 ms
