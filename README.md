@@ -78,15 +78,15 @@ idx[i] = 0 if A[i] >= B[i], else 1
 #### Baseline C execution time: 4648.745000 ms
 |2^28 elements <br> CUDA block size = 1024 |	Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) |Speedup vs baseline C program| 
 |----------------------------------------- |-------------------------------------------------------------------------------------------------------------------------|-|
-| x86-64| | | | 
-| X86-64 SIMD XMM | | |
-| x86-64 SIMD YMM	| | |
-| CUDA Unified | | |
-| CUDA Prefetch	| | |
-| CUDA Prefetch + page creation	| | | 
-| CUDA Prefetch + Page creation + memadvise	| | |
-| CUDA classic MEMCPY	| | |
-| CUDA data init in a CUDA kernel	| | |
+| x86-64| a| | | 
+| X86-64 SIMD XMM | a| |
+| x86-64 SIMD YMM	| 986447550ns | |
+| CUDA Unified | 278.45ms | |
+| CUDA Prefetch	| 14.204ms | |
+| CUDA Prefetch + page creation	| 14.375ms | | 
+| CUDA Prefetch + Page creation + memadvise	| 13.846ms | |
+| CUDA classic MEMCPY	| 6.43766s | |
+| CUDA data init in a CUDA kernel	| 120.76ms | |
 
 ## iv.) Analysis
 
