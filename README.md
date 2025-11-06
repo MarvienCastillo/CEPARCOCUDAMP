@@ -82,9 +82,9 @@ idx[i] = 0 if A[i] >= B[i], else 1
 
 |2^28 elements <br> CUDA block size = 1024 |	Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) |Speedup vs baseline C program| 
 |----------------------------------------- |-------------------------------------------------------------------------------------------------------------------------|-|
-| x86-64| 1172539883 ns | | | 
-| X86-64 SIMD XMM | 986447550ns | |
-| x86-64 SIMD YMM	| a | |
+| x86-64| 1172.539883ms | 3.96 | 
+| X86-64 SIMD XMM | 986.44755ms | 4.71 |
+| x86-64 SIMD YMM	| a |  |
 | CUDA Unified | 278.45ms | 16.70 |
 | CUDA Prefetch	| 14.204ms | 327.28 |
 | CUDA Prefetch + page creation	| 14.375ms | 323.39 | 
@@ -139,4 +139,5 @@ In cases where the needed requirement is a large-scale data, image or graphics p
 On the other hand, SIMD could be the better choice than SIMT when there is a need for Real-time signal processing, Small matrix/vector operations, Embedded systems and mobile CPUs. SIMD excels in low-latency environments where operations must complete within strict timing constraints. Also, Tasks like dot products or small convolution kernels benefit from SIMD’s low overhead and tight memory locality. Lastly, SIMD is often the only available parallelism model in constrained environments.
 
 ## v.) Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
+
 ## vi.) Discuss, based on your experience on the particular project use case, the differences between SIMD and SIMT in handling parallelism. <br> Include also the PROS and CONS of using SIMD and SIMT in your use case.
