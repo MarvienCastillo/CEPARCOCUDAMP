@@ -28,6 +28,8 @@ idx[i] = 0 if A[i] >= B[i], else 1
 ## AI Usage Declaration
 ## i.) Screenshot of the program output with correctness check AND execution time for all cases
 ### x86-64
+<img width="1280" height="677" alt="image" src="https://github.com/user-attachments/assets/7faff59c-5e96-4db7-b3b4-e1a6cf32e1a0" />
+
 ### x86-64 SIMD XMM
 <img width="1280" height="678" alt="image" src="https://github.com/user-attachments/assets/df366f46-7f9e-404a-be66-98b529fc2b4c" />
 
@@ -76,17 +78,19 @@ idx[i] = 0 if A[i] >= B[i], else 1
 
 ## iii.) Comparative table of execution time
 #### Baseline C execution time: 4648.745000 ms
+#### Speedup = Baseline C time / Kernel time
+
 |2^28 elements <br> CUDA block size = 1024 |	Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) |Speedup vs baseline C program| 
 |----------------------------------------- |-------------------------------------------------------------------------------------------------------------------------|-|
-| x86-64| a| | | 
-| X86-64 SIMD XMM | a| |
-| x86-64 SIMD YMM	| 986447550ns | |
-| CUDA Unified | 278.45ms | |
-| CUDA Prefetch	| 14.204ms | |
-| CUDA Prefetch + page creation	| 14.375ms | | 
-| CUDA Prefetch + Page creation + memadvise	| 13.846ms | |
+| x86-64| 1172539883 ns | | | 
+| X86-64 SIMD XMM | 986447550ns | |
+| x86-64 SIMD YMM	| a | |
+| CUDA Unified | 278.45ms | 16.70 |
+| CUDA Prefetch	| 14.204ms | 327.28 |
+| CUDA Prefetch + page creation	| 14.375ms | 323.39 | 
+| CUDA Prefetch + Page creation + memadvise	| 13.846ms | 335.75 |
 | CUDA classic MEMCPY	| 6.43766s | |
-| CUDA data init in a CUDA kernel	| 120.76ms | |
+| CUDA data init in a CUDA kernel	| 120.76ms | 38.50 |
 
 ## iv.) Analysis
 
