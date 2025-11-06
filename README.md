@@ -139,5 +139,16 @@ In cases where the needed requirement is a large-scale data, image or graphics p
 On the other hand, SIMD could be the better choice than SIMT when there is a need for Real-time signal processing, Small matrix/vector operations, Embedded systems and mobile CPUs. SIMD excels in low-latency environments where operations must complete within strict timing constraints. Also, Tasks like dot products or small convolution kernels benefit from SIMD’s low overhead and tight memory locality. Lastly, SIMD is often the only available parallelism model in constrained environments.
 
 ## v.) Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
-
+The problems we encountered was the amount of elements that is needed for the table. For the YMM, it took so much time so we decided to just loop it once instead of looping it 30. The problems with YMM stems from our previous SIMD project wherein we implemented it incorrectly therefore it took so much time when it should be faster than XMM. Furthermore, since the memCPY was not discussed in the class, we did a lot of research in order to get the solution for it. 
 ## vi.) Discuss, based on your experience on the particular project use case, the differences between SIMD and SIMT in handling parallelism. <br> Include also the PROS and CONS of using SIMD and SIMT in your use case.
+Based on the table above, we have seen that SIMT is so much faster than SIMD. This is because SIMT involves CPU and GPU while SIMD only involves CPU. However there are still pros and cons between the two.
+
+### SIMD Pros: 
+- SIMD is much easier to program because it only uses AVX2 instructions which mostly use a less amount of lines.  
+### SIMD Cons:
+- SIMD is slower when the dataset is high. Which is also why the execution for YMM and XMM in this table is much slower than CUDA since it uses 2^28 number of elements
+### SIMT Pros:
+- SIMT excels with large datasets because the CPU and GPU cooperate, with the GPU providing the massive parallel throughput that the CPU orchestrates.
+### SIMT Cons:
+- SIMT is harder to program because it uses CUDA and memory allocation.
+
