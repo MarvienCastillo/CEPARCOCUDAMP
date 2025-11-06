@@ -3,8 +3,16 @@
 - Herrera, Mikhaela Gabrielle B.
 - Regindin, Sean Adrien I.
 ## Project Specification
-SIMD Project Specifications
-Write the kernel in (1) C program; (2) an x86-64 assembly language; (3) x86 SIMD AVX2 assembly language using XMM register; (4) x86 SIMD AVX2 assembly language using YMM register. The kernel is to perform **element-wise maximum with index tracking**.
+- This project explores the performance and correctness of various CUDA implementations based on our SIMD specification. We compare multiple CUDA variants against a baseline C/C++ implementation, analyzing execution time, correctness, and architectural behavior.
+- Implementations includes:
+  - (1) a C/C++ program version
+  - (2) a CUDA program version using a grid-stride loop without prefetch and without mem advise
+  - (3) a CUDA program version using a grid-stride loop with prefetching but without page creation and without mem advise
+  - (4) a CUDA program version using a grid-stride loop with prefetch, with page creation but without mem advise
+  - (5) a CUDA program version using a grid-stride loop with prefetch, with page creation and with mem advise
+  - (6) Classic MemCopy method (no Unified memory)
+  - (7) Another CUDA kernel that initializes the data  
+
 
 **Input**: Scalar variable n (integer) contains the length of the vector; Vectors A and B are **single-precision float**.
 
