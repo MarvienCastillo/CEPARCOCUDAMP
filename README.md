@@ -89,7 +89,7 @@ idx[i] = 0 if A[i] >= B[i], else 1
 | CUDA Prefetch	| 14.204ms | 327.28 |
 | CUDA Prefetch + page creation	| 14.375ms | 323.39 | 
 | CUDA Prefetch + Page creation + memadvise	| 13.846ms | 335.75 |
-| CUDA classic MEMCPY	| 11.257ms | |
+| CUDA classic MEMCPY	| 11.257ms |412.89 |
 | CUDA data init in a CUDA kernel	| 120.76ms | 38.50 |
 
 ## iv.) Analysis
