@@ -35,6 +35,8 @@ idx[i] = 0 if A[i] >= B[i], else 1
 <img width="1280" height="678" alt="image" src="https://github.com/user-attachments/assets/df366f46-7f9e-404a-be66-98b529fc2b4c" />
 
 ### x86-64 SIMD YMM
+<img width="853" height="668" alt="image" src="https://github.com/user-attachments/assets/1502384f-abad-44a6-afa4-47e4921f0539" />
+
 ### VARIANT 1: C
 <img width="1131" height="543" alt="image" src="https://github.com/user-attachments/assets/d0eaaf4b-d3f9-46c1-b67d-3d1029af38d4" />
 
@@ -85,7 +87,7 @@ idx[i] = 0 if A[i] >= B[i], else 1
 |----------------------------------------- |-------------------------------------------------------------------------------------------------------------------------|-|
 | x86-64| 1172.539883ms | 3.96 | 
 | X86-64 SIMD XMM | 986.44755ms | 4.71 |
-| x86-64 SIMD YMM	| a |  |
+| x86-64 SIMD YMM	| 0.007383 ms | 629655.2892 |
 | CUDA Grid-stride Loop | 278.45ms | 16.70 |
 | CUDA Prefetch	| 14.204ms | 327.28 |
 | CUDA Prefetch + page creation	| 14.375ms | 323.39 | 
@@ -140,7 +142,7 @@ In cases where the needed requirement is a large-scale data, image or graphics p
 On the other hand, SIMD could be the better choice than SIMT when there is a need for Real-time signal processing, Small matrix/vector operations, Embedded systems and mobile CPUs. SIMD excels in low-latency environments where operations must complete within strict timing constraints. Also, Tasks like dot products or small convolution kernels benefit from SIMD’s low overhead and tight memory locality. Lastly, SIMD is often the only available parallelism model in constrained environments.
 
 ## v.) Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
-The problems we encountered was the amount of elements that is needed for the table. For the YMM, it took so much time so we decided to just loop it once instead of looping it 30. The problems with YMM stems from our previous SIMD project wherein we implemented it incorrectly therefore it took so much time when it should be faster than XMM. Furthermore, since the memCPY was not discussed in the class, we did a lot of research in order to get the solution for it. 
+The problems we encountered was the amount of elements that is needed for the table. For the YMM, it took so much time so we decided to just loop it once instead of looping it 30. We also decided to use 2^15 since its taking so much of the time. The problems with YMM might stem from our previous SIMD project wherein we implemented it imperfectly therefore it took so much time when it should be faster than XMM. Furthermore, since the memCPY was not discussed in the class, we did a lot of research in order to get the solution for it.
 ## vi.) Discuss, based on your experience on the particular project use case, the differences between SIMD and SIMT in handling parallelism. <br> Include also the PROS and CONS of using SIMD and SIMT in your use case.
 Based on the table above, we have seen that SIMT is so much faster than SIMD. This is because SIMT involves CPU and GPU while SIMD only involves CPU. However there are still pros and cons between the two.
 
