@@ -55,6 +55,20 @@ idx[i] = 0 if A[i] >= B[i], else 1
 
 
 ## ii.) NSight Screenshots
+
+### VARIANT 2: CUDA Unified
+<img width="1280" height="679" alt="image" src="https://github.com/user-attachments/assets/7eb6171f-37e8-4c18-95c3-24d5ec43d4b5" />
+
+### VARIANT 3: CUDA Prefetch
+
+### VARIANT 4: CUDA Prefetch + page creation
+
+### VARIANT 5: CUDA Prefetch + Page creation + memadvise
+
+### VARIANT 6: CUDA classic MEMCPY
+
+### VARIANT 7: CUDA data init in a CUDA kernel
+
 ## iii.) Comparative table of execution time
 #### Baseline C execution time: 4648.745000 ms
 |2^28 elements <br> CUDA block size = 1024 |	Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) |Speedup vs baseline C program| 
