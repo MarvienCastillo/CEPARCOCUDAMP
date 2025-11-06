@@ -27,6 +27,33 @@ idx[i] = 0 if A[i] >= B[i], else 1
 **Output**: store maximum of each element in single-precision vector C. Store index in 32-bit vector idx.
 ## AI Usage Declaration
 ## i.) Screenshot of the program output with correctness check AND execution time for all cases
+### x86-64
+### x86-64 SIMD XMM
+<img width="1280" height="678" alt="image" src="https://github.com/user-attachments/assets/df366f46-7f9e-404a-be66-98b529fc2b4c" />
+
+### x86-64 SIMD YMM
+### VARIANT 1: C
+<img width="1131" height="543" alt="image" src="https://github.com/user-attachments/assets/d0eaaf4b-d3f9-46c1-b67d-3d1029af38d4" />
+
+### VARIANT 2: CUDA Unified
+<img width="1178" height="701" alt="image" src="https://github.com/user-attachments/assets/100eeb18-e87f-4fa6-8813-cc935947bf91" />
+
+### VARIANT 3: CUDA Prefetch
+<img width="1173" height="763" alt="image" src="https://github.com/user-attachments/assets/21686bc7-3999-427a-bb04-3114fac42281" />
+
+### VARIANT 4: CUDA Prefetch + page creation
+<img width="1131" height="740" alt="image" src="https://github.com/user-attachments/assets/960573fa-af84-4eb8-a682-28f1ade3e4b8" />
+
+### VARIANT 5: CUDA Prefetch + Page creation + memadvise
+<img width="1161" height="748" alt="image" src="https://github.com/user-attachments/assets/ee2b7d61-90c5-4991-915f-fd51f864a020" />
+
+### VARIANT 6: CUDA classic MEMCPY
+<img width="1212" height="656" alt="image" src="https://github.com/user-attachments/assets/74219c83-f3fe-42cf-8726-b5b6605dc466" />
+
+### VARIANT 7: CUDA data init in a CUDA kernel
+<img width="1143" height="707" alt="image" src="https://github.com/user-attachments/assets/452e6737-9dd0-4d00-8613-0760d7f2e81c" />
+
+
 ## ii.) NSight Screenshots
 ## iii.) Comparative table of execution time
 |2^28 elements <br> CUDA block size = 1024 |	Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) |Speedup vs baseline C program| 
@@ -36,8 +63,8 @@ idx[i] = 0 if A[i] >= B[i], else 1
 | x86-64 SIMD YMM	| | |
 | CUDA Unified | | |
 | CUDA Prefetch	| | |
-| CUDA Prefetch+page creation	| | | 
-| CUDA Prefetch+Page creatition+memadvise	| | |
+| CUDA Prefetch + page creation	| | | 
+| CUDA Prefetch + Page creation + memadvise	| | |
 | CUDA classic MEMCPY	| | |
 | CUDA data init in a CUDA kernel	| | |
 
