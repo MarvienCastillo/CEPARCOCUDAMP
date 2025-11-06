@@ -3,6 +3,20 @@
 - Herrera, Mikhaela Gabrielle B.
 - Regindin, Sean Adrien I.
 ## Project Specification
+SIMD Project Specifications
+Write the kernel in (1) C program; (2) an x86-64 assembly language; (3) x86 SIMD AVX2 assembly language using XMM register; (4) x86 SIMD AVX2 assembly language using YMM register. The kernel is to perform **element-wise maximum with index tracking**.
+
+**Input**: Scalar variable n (integer) contains the length of the vector; Vectors A and B are **single-precision float**.
+
+Process:
+For each index i, compute:
+```
+c[i] = max(A[i], B[i])
+
+idx[i] = 0 if A[i] >= B[i], else 1
+```
+
+**Output**: store maximum of each element in single-precision vector C. Store index in 32-bit vector idx.
 ## AI Usage Declaration
 ## i.) Screenshot of the program output with correctness check AND execution time for all cases
 ## ii.) NSight Screenshots
