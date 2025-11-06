@@ -45,7 +45,6 @@ idx[i] = 0 if A[i] >= B[i], else 1
 
 ### (a.) What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
 -Overheads are the additional computation time or resource usage that does not directly contribute to the core computation but is necessary for its execution. The included overheads in the GPU execution time are **Kernel Launch Overhead**, **Memory Access Latency**, **Unified Memory Page Faults** (when using `cudaMallocManaged`), **Prefetching and Memory Advice** (when using `cudaMemPrefetchAsync` and `cudaMemAdvise`), and **Explicit Memory Transfers** (when using `cudaMemcpy`).
--Variant Differences
 The project includes the following implementations to explore performance and memory management strategies:
 1. **Baseline C/C++ Program**
   - Performs element-wise maximum with index tracking on the CPU.
