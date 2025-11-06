@@ -26,6 +26,7 @@ idx[i] = 0 if A[i] >= B[i], else 1
 
 **Output**: store maximum of each element in single-precision vector C. Store index in 32-bit vector idx.
 ## AI Usage Declaration
+- AI is applied to content rewriting or paraphrasing.
 ## i.) Screenshot of the program output with correctness check AND execution time for all cases
 ### x86-64
 <img width="1280" height="677" alt="image" src="https://github.com/user-attachments/assets/7faff59c-5e96-4db7-b3b4-e1a6cf32e1a0" />
