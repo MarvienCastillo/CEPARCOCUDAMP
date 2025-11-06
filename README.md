@@ -37,7 +37,7 @@ idx[i] = 0 if A[i] >= B[i], else 1
 ### VARIANT 1: C
 <img width="1131" height="543" alt="image" src="https://github.com/user-attachments/assets/d0eaaf4b-d3f9-46c1-b67d-3d1029af38d4" />
 
-### VARIANT 2: CUDA Unified
+### VARIANT 2: CUDA Grid-stride Loop
 <img width="1178" height="701" alt="image" src="https://github.com/user-attachments/assets/100eeb18-e87f-4fa6-8813-cc935947bf91" />
 
 ### VARIANT 3: CUDA Prefetch
@@ -85,7 +85,7 @@ idx[i] = 0 if A[i] >= B[i], else 1
 | x86-64| 1172.539883ms | 3.96 | 
 | X86-64 SIMD XMM | 986.44755ms | 4.71 |
 | x86-64 SIMD YMM	| a |  |
-| CUDA Unified | 278.45ms | 16.70 |
+| CUDA Grid-stride Loop | 278.45ms | 16.70 |
 | CUDA Prefetch	| 14.204ms | 327.28 |
 | CUDA Prefetch + page creation	| 14.375ms | 323.39 | 
 | CUDA Prefetch + Page creation + memadvise	| 13.846ms | 335.75 |
